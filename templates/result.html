@@ -2,32 +2,30 @@
 
 <body>
 
-  <form action="index" method="post">
-    学号：
-    <input type="text" name="sid" value="031802001">
-    <br>
-    <input type="checkbox" name="g1" value="g1">第1组
-    <br>
-    <input type="checkbox" name="g2" value="g2">第2组
-    <br>
-    <input type="checkbox" name="g3" value="g3">第3组
-    <br>
-    <input type="checkbox" name="g4" value="g4">第4组
-    <br>
-    <input type="checkbox" name="g5" value="g5">第5组
-    <br>
-    <input type="checkbox" name="g6" value="g6">第6组
-    <br>
-    <input type="checkbox" name="g7" value="g7">第7组
-    <br>
-    <input type="checkbox" name="g8" value="g8">第8组
-    <br>
-    <input type="checkbox" name="g9" value="g9">第9组
-    <br>
-    <input type="checkbox" name="g10" value="g10">第10组
-    <br>
-    <input type="checkbox" name="g11" value="g11">第11组
-    <p><input type="submit" value="投票" /></p>
+  第1组：{{data[1]}}票
+  <br>
+  第2组：{{data[2]}}票
+  <br>
+  第3组：{{data[3]}}票
+  <br>
+  第4组：{{data[4]}}票
+  <br>
+  第5组：{{data[5]}}票
+  <br>
+  第6组：{{data[6]}}票
+  <br>
+  第7组：{{data[7]}}票
+  <br>
+  第8组：{{data[8]}}票
+  <br>
+  第9组：{{data[9]}}票
+  <br>
+  第10组：{{data[10]}}票
+  <br>
+  第11组：{{data[11]}}票
+  <br>
+  <form action="data" method="post">
+    <input type="submit" value="查看详细数据" /></p>
   </form>
 
 </body>
