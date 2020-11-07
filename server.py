@@ -3,9 +3,10 @@ from flask.templating import render_template
 import sqlite3
 app = Flask(__name__)
 
+
 @app.route('/')
 def home():
-    return render_template('login.html')
+    return render_template('index.html')
 
 
 @app.route('/result', methods=['GET'])
@@ -19,25 +20,20 @@ def result():
     return string
 
 
-@app.route('/login', methods=['POST'])
-def login():
-    if request.method == 'POST':
-        sql = sqlite3.connect("data.db")
-        for i in range(1, 12):
-            group = request.form.get("g"+str(i))
-            if group != None:
-                print(group)
-                insert = 'insert into vote values(?, ?)'
-                insertData = ('00000000', i)
-                sql.execute(insert, insertData)
-        sql.commit()
-        sql.close()
-        return redirect(url_for('result'))
-    # else:
-    #     group = request.args.get('g1')
-    #     print(group)
-        # return redirect(url_for('success', name=group))
-    # return False
+@app.route('/index', methods=['POST'])
+def index():
+    sql = sqlite3.connect("data.db")
+    for i in range(1, 12):
+        group = request.form.get("g"+str(i))
+        if group != None:
+            print(group)
+            insert = 'insert into vote values(?, ?)'
+            sid = request.form.get("sid")
+            insertData = (sid, i)
+            sql.execute(insert, insertData)
+    sql.commit()
+    sql.close()
+    return redirect(url_for('result'))
 
 
 if __name__ == '__main__':
