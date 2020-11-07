@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Title</title>
+</head>
+<body>
+<h1>请选出最帅的男人</h1>
+<ul>
+{% for k,v in gg.items() %}
+<li style="cursor: pointer" id="user_{{ k }}" οndblclick="vote({{ k }});">ID:{{ k }}, 姓名：{{ v.name }} ，票数：<span>{{ v.count }}</span></li>
+{% endfor %}
+</ul>
+
+<script src="/static/jquery-3.3.1.min.js"></script>
+<script>
+    $(function () {
+    get_new_count();
+    });
+
+    function get_new_count() {
+    $.ajax({
+    url: '/get_new_count',
+    type:'GET',
+    dataType:'JSON',
+    success:function (arg) {
+    if (arg.status){
+    // 更新票数
+    var gid = "#user_" + arg.data.gid;
+    $(gid).find('span').text(arg.data.count);
+    }else{
+    // 10s内没有人投票
+    }
+    get_new_count();
+
+    }
+    })
+    }
+
+    function vote(gid) {
+    $.ajax({
+    url: '/vote',
+    type:'POST',
+    data:{gid:gid},
+    dataType:"JSON",
+    success:function (arg) {
+    }
+    })
+    }
+</script>
+</body>
+</html>
