@@ -1,0 +1,24 @@
+body{
+    background:url(login2.jpg);
+     background-repeat: no-repeat;
+     background-size: 100% auto;
+ }
+ .bigbox{
+    padding:20px 50px;
+      background: #00000060;
+      width: 30%;
+      height: auto ;
+     margin: 0 auto ;
+     margin-top: 10%;
+ }
+ #input{
+    font-size:25px;
+    color:gray;
+ }
+ #form{
+    font-size:25px;
+    color: aliceblue;
+ }
+ #botton{
+     font-size:25px;
+ }
