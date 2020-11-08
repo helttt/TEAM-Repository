@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <title>学生投票页</title>
+  <link rel="stylesheet" href="../static/css/page1.css">
+</head>
+
+<body>
+  <html>
+
+  <body>
+    <div class="bigbox">
+      <form id=form action="vote" method="post">
+        <h3>请投票</h3>
+        <input id=input hidden type="text" name="sid" value={{sid}}>
+        <input type="checkbox" name="g1" value="g1">第1组
+        <br>
+        <input type="checkbox" name="g2" value="g2">第2组
+        <br>
+        <input type="checkbox" name="g3" value="g3">第3组
+        <br>
+        <input type="checkbox" name="g4" value="g4">第4组
+        <br>
+        <input type="checkbox" name="g5" value="g5">第5组
+        <br>
+        <input type="checkbox" name="g6" value="g6">第6组
+        <br>
+        <input type="checkbox" name="g7" value="g7">第7组
+        <br>
+        <input type="checkbox" name="g8" value="g8">第8组
+        <br>
+        <input type="checkbox" name="g9" value="g9">第9组
+        <br>
+        <input type="checkbox" name="g10" value="g10">第10组
+        <br>
+        <input type="checkbox" name="g11" value="g11">第11组
+        <p><input type="submit" id=button value="投票" onclick="return submitCheck()" /></p>
+      </form>
+
+    </div>
+  </body>
+  <script>
+    var gid = {{ gid }};
+    document.getElementsByName("g" + gid)[0].disabled = true;
+    function submitCheck() {
+      var checked = false;
+      for (var i = 1; i <= 11; i++) {
+        if (document.getElementsByName("g" + i)[0].checked == true) {
+          checked = true;
+          break;
+        }
+      }
+      if (checked) {
+        return true;
+      }
+      alert("请至少选择一个组投票。")
+      return false;
+    }
+  </script>
+
+  </html>
+
+
+</body>
+
+</html>
