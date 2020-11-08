@@ -130,3 +130,5 @@ students = [('031802113', '黄明浩', 6),
            ('031802532', '王梓维', 7)]
 for i in students:
     connector.execute(insert, i)
+connector.commit()
+connector.close()
