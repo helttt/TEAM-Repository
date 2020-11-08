@@ -33,5 +33,12 @@
 
     </div>
 </body>
-
+<script>
+    if ({{error}} == 1) {
+        alert("您已经投过票，不能多投。");
+    }
+    else if ({{error}} == 2) {
+        alert("学号输入错误或不是本班学生。");
+    }
+</script>
 </html>

@@ -1,7 +1,7 @@
 body{
     background:url(../images/login2.jpg);
      background-repeat: no-repeat;
-     background-size:  auto 120%;
+     background-size:  cover;
  }
 
  .bigbox{

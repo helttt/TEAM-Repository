@@ -27,66 +27,77 @@
           <td class="btbg font-center titfont">小组</td>
           <td width="10%" class="btbg font-center titfont">得票数</td>
           <td width="10%" class="btbg font-center titfont">比例</td>
+          <td width="50%" class="btbg font-center titfont">投票学生</td>
         </tr>
 
         <tr>
           <td width="7%" class="btbg1 font-center">1</td>
           <td name="sum" class="font-center">&nbsp;</td>
           <td name="percentage" class="font-center">&nbsp;</td>
+          <td name="students" class="font-center">&nbsp;</td>
         </tr>
 
         <tr>
           <td width="7%" class="btbg1 font-center">2</td>
           <td name="sum" class="font-center">&nbsp;</td>
           <td name="percentage" class="font-center">&nbsp;</td>
+          <td name="students" class="font-center">&nbsp;</td>
         </tr>
 
         <tr>
           <td width="7%" class="btbg1 font-center">3</td>
           <td name="sum" class="font-center">&nbsp;</td>
           <td name="percentage" class="font-center">&nbsp;</td>
+          <td name="students" class="font-center">&nbsp;</td>
         </tr>
 
         <tr>
           <td width="7%" class="btbg1 font-center">4</td>
           <td name="sum" class="font-center">&nbsp;</td>
           <td name="percentage" class="font-center">&nbsp;</td>
+          <td name="students" class="font-center">&nbsp;</td>
         </tr>
 
         <tr>
           <td width="7%" class="btbg1 font-center">5</td>
           <td name="sum" class="font-center">&nbsp;</td>
           <td name="percentage" class="font-center">&nbsp;</td>
+          <td name="students" class="font-center">&nbsp;</td>
         </tr>
 
         <tr>
           <td width="7%" class="btbg1 font-center">6</td>
           <td name="sum" class="font-center">&nbsp;</td>
           <td name="percentage" class="font-center">&nbsp;</td>
+          <td name="students" class="font-center">&nbsp;</td>
         </tr>
 
         <tr>
           <td width="7%" class="btbg1 font-center">7</td>
           <td name="sum" class="font-center">&nbsp;</td>
           <td name="percentage" class="font-center">&nbsp;</td>
+          <td name="students" class="font-center">&nbsp;</td>
         </tr>
 
         <tr>
           <td width="7%" class="btbg1 font-center">8</td>
           <td name="sum" class="font-center">&nbsp;</td>
           <td name="percentage" class="font-center">&nbsp;</td>
+          <td name="students" class="font-center">&nbsp;</td>
         </tr>
 
         <tr>
           <td width="7%" class="btbg1 font-center">9</td>
           <td name="sum" class="font-center">&nbsp;</td>
           <td name="percentage" class="font-center">&nbsp;</td>
+          <td name="students" class="font-center">&nbsp;</td>
         </tr>
 
         <tr>
           <td width="7%" class="btbg1 font-center">10</td>
           <td name="sum" class="font-center">&nbsp;</td>
           <td name="percentage" class="font-center">&nbsp;</td>
+          <td name="students" class="font-center">&nbsp;</td>
         </tr>
 
 
@@ -94,12 +105,14 @@
           <td width="7%" class="btbg1 font-center">11</td>
           <td name="sum" class="font-center">&nbsp;</td>
           <td name="percentage" class="font-center">&nbsp;</td>
+          <td name="students" class="font-center">&nbsp;</td>
         </tr>
 
         <tr>
           <td width="7%" class="btbg1 font-center">总计</td>
           <td name="sum" class="btbg2 font-center">&nbsp;</td>
           <td name="percentage" class="btbg2 font-center">&nbsp;</td>
+          <td name="students" class="btbg2 font-center">&nbsp;</td>
         </tr>
 
       </table>
@@ -110,16 +123,16 @@
 </body>
 
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+<!-- <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
   <tr>
     <td align="center" class="biaoti" height="60">各小组投票数</td>
   </tr>
   <tr>
     <td align="right" height="25"> </td>
   </tr>
-</table>
+</table> -->
 
-<div class="subnav">
+<!-- <div class="subnav">
   <ul>
     <li><a href="#">第一组 <span> > </span> </a></li>
     <li><a href="#">第二组 <span> ></span> </a></li>
@@ -184,17 +197,17 @@
       <td width="7%" class="btbg1 font-center">11 </td>
       <td> </td>
     </tr>
-</div>
+</div> -->
 
 <script>
-  var data = {{ data }};
+  var data = {{ data| tojson }};
   var total = 0;
   for (i = 1; i <= 11; i++) {
     total += data[i];
-    console.log(total);
   }
   for (i = 0; i < 11; i++) {
     document.getElementsByName("sum")[i].innerHTML = data[i + 1];
+    document.getElementsByName("students")[i].innerHTML = data[i + 12];
     if (total) {
       document.getElementsByName("percentage")[i].innerHTML = (100.0 * data[i + 1] / total).toFixed(2) + "%";
     }

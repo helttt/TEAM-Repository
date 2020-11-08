@@ -1,7 +1,7 @@
 body{
     background:url(../images/login2.jpg);
      background-repeat: no-repeat;
-     background-size: 100% auto;
+     background-size: cover;
  }
    .login{
        padding:20px 50px;

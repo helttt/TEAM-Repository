@@ -36,15 +36,28 @@
         <input type="checkbox" name="g10" value="g10">第10组
         <br>
         <input type="checkbox" name="g11" value="g11">第11组
-        <p><input type="submit" id=button value="投票" /></p>
+        <p><input type="submit" id=button value="投票" onclick="return submitCheck()" /></p>
       </form>
 
     </div>
   </body>
   <script>
-    var gid = {{gid}};
-    var checkbox = document.getElementsByName("g" + gid)[0];
-    checkbox.disabled=true;
+    var gid = {{ gid }};
+    document.getElementsByName("g" + gid)[0].disabled = true;
+    function submitCheck() {
+      var checked = false;
+      for (var i = 1; i <= 11; i++) {
+        if (document.getElementsByName("g" + i)[0].checked == true) {
+          checked = true;
+          break;
+        }
+      }
+      if (checked) {
+        return true;
+      }
+      alert("请至少选择一个组投票。")
+      return false;
+    }
   </script>
 
   </html>

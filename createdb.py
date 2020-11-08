@@ -1,6 +1,8 @@
 import sqlite3
 
 connector = sqlite3.connect("data.db")
+connector.execute('drop table if exists student;')
+connector.execute('drop table if exists vote;')
 connector.execute('''CREATE TABLE student (
                 sid char(9),
                 sname char(10),
