@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <title>老师查看页</title>
+  <link rel="stylesheet" href="../static/css/page.css">
+</head>
+
+<body>
+  <div class="bigbox">
+    <html>
+
+    <body>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+          <td align="center" class="biaoti" height="60">总得票数</td>
+        </tr>
+        <tr>
+          <td align="right" height="25">软工实践小组得票</td>
+        </tr>
+      </table>
+
+      <table width="100%" border="0" cellspacing="1" cellpadding="4" bgcolor="#cccccc" class="tabtop13" align="center">
+        <tr>
+          <td class="btbg font-center titfont">小组</td>
+          <td width="10%" class="btbg font-center titfont">得票数</td>
+          <td width="10%" class="btbg font-center titfont">比例</td>
+        </tr>
+
+        <tr>
+          <td width="7%" class="btbg1 font-center">1</td>
+          <td id="t1_1" width="7%" class="btbg1 font-center">{{data3[1]}}</td>
+          <td id="t1_2" width="7%" class="btbg1 font-center">{{data4[1]}}</td>
+
+        </tr>
+
+        <tr>
+          <td width="7%" class="btbg1 font-center">2</td>
+          <td id="t2_1" width="7%" class="btbg1 font-center">{{data3[2]}}</td>
+          <td id="t2_2" width="7%" class="btbg1 font-center">{{data4[2]}}</td>
+        </tr>
+
+        <tr>
+          <td width="7%" class="btbg1 font-center">3</td>
+          <td id="t3_1" width="7%" class="btbg1 font-center">{{data3[3]}}</td>
+          <td id="t3_2" width="7%" class="btbg1 font-center">{{data4[3]}}</td>
+        </tr>
+
+        <tr>
+          <td width="7%" class="btbg1 font-center">4</td>
+          <td id="t4_1" width="7%" class="btbg1 font-center">{{data3[4]}}</td>
+          <td id="t4_2" width="7%" class="btbg1 font-center">{{data4[4]}}</td>
+        </tr>
+
+        <tr>
+          <td width="7%" class="btbg1 font-center">5</td>
+          <td id="t5_1" width="7%" class="btbg1 font-center">{{data3[5]}}</td>
+          <td id="t5_2" width="7%" class="btbg1 font-center">{{data4[5]}}</td>
+        </tr>
+
+        <tr>
+          <td width="7%" class="btbg1 font-center">6</td>
+          <td id="t6_1" width="7%" class="btbg1 font-center">{{data3[6]}}</td>
+          <td id="t6_2" width="7%" class="btbg1 font-center">{{data4[6]}}</td>
+        </tr>
+
+        <tr>
+          <td width="7%" class="btbg1 font-center">7</td>
+          <td id="t7_1" width="7%" class="btbg1 font-center">{{data3[7]}}</td>
+          <td id="t7_2" width="7%" class="btbg1 font-center">{{data4[7]}}</td>
+        </tr>
+
+        <tr>
+          <td width="7%" class="btbg1 font-center">8</td>
+          <td id="t8_1" width="7%" class="btbg1 font-center">{{data3[8]}}</td>
+          <td id="t8_2" width="7%" class="btbg1 font-center">{{data4[8]}}</td>
+        </tr>
+
+        <tr>
+          <td width="7%" class="btbg1 font-center">9</td>
+          <td id="t9_1" width="7%" class="btbg1 font-center">{{data3[9]}}</td>
+          <td id="t9_2" width="7%" class="btbg1 font-center">{{data4[9]}}</td>
+        </tr>
+
+        <tr>
+          <td width="7%" class="btbg1 font-center">10</td>
+          <td id="t10_1" width="7%" class="btbg1 font-center">{{data3[10]}}</td>
+          <td id="t10_2" width="7%" class="btbg1 font-center">{{data4[10]}}</td>
+        </tr>
+
+
+        <tr>
+          <td width="7%" class="btbg1 font-center">11</td>
+          <td id="t11_1" width="7%" class="btbg1 font-center">{{data3[11]}}</td>
+          <td id="t11_2" width="7%" class="btbg1 font-center">{{data4[11]}}</td>
+        </tr>
+
+        <tr>
+          <td width="7%" class="btbg1 font-center">总计</td>
+          <td id="sum_1" class="btbg2 font-center">&nbsp;</td>
+          <td id="sum_2" class="btbg2 font-center">1</td>
+        </tr>
+
+      </table>
+    </body>
+
+    </html>
+
+</body>
+
+
+<script></script>
+<script>
+  // var datajson = {{ data3| tojson }}
+  var i
+  var sum = 0;
+  for (i in datajson) {
+    sum = sum + datajson[i];
+  }
+  document.getElementById("sum_1").innerHTML = sum;
+</script>
+</html>
